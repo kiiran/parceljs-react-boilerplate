@@ -10,6 +10,15 @@ const SpinnerContainer = styled.div`
 `;
 
 const Spinner = styled.div`
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
   border: 3px solid transparent;
   border-top-color: ${({ theme }) => theme.primary};
   border-radius: 50px;

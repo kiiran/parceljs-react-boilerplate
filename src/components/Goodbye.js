@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from '@reach/router';
 
 export default class Hello extends Component {
   render() {
-    return <div>Later, tater!</div>;
+    return (
+      <div>
+        <h1>Later, tater!</h1>
+        <Link to="/">Oh, actually, I forgot my keys</Link>
+      </div>
+    );
   }
 }

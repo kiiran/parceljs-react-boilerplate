@@ -5,7 +5,7 @@ export default class Hello extends Component {
   render() {
     return (
       <div>
-        <h1>Later, tater!</h1>
+        <h1>See ya, then!</h1>
         <Link to="/">Oh, actually, I forgot my keys</Link>
       </div>
     );

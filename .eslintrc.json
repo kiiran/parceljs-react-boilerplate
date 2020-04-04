@@ -5,8 +5,7 @@
     "jest": true,
     "es6": true
   },
-  "extends": ["eslint:recommended", "airbnb"],
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
@@ -15,38 +14,62 @@
     "ecmaVersion": 6,
     "sourceType": "module"
   },
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "paths": ["./src"]
-      }
-    }
-  },
-  "plugins": ["react", "jsx-a11y"],
+  "plugins": ["@typescript-eslint", "react", "jsx-a11y", "react-hooks"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "plugin:react-hooks/recommended",
+    "prettier/standard",
+    "prettier/react",
+    "plugin:prettier/recommended"
+  ],
   "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "arrowParens": "always",
+        "singleQuote": true,
+        "trailingComma": "all",
+        "semi": false
+      }
+    ],
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
     "jsx-a11y/anchor-is-valid": ["error", { "components": ["ExternalLink"] }],
-    "indent": ["error", 2],
-    "linebreak-style": ["error", "unix"],
-    "semi": ["error", "always"],
     "no-console": [
       "warn",
       { "allow": ["info", "warn", "error", "time", "timeEnd"] }
     ],
     "no-param-reassign": ["error", { "props": false }],
-    "no-use-before-define": 0,
-    "object-curly-newline": 0,
-    "react/jsx-curly-brace-presence": 0,
-    "react/jsx-filename-extension": 0,
-    "react/no-array-index-key": 0,
-    "react/prefer-stateless-function": 0,
-    "import/prefer-default-export": 0,
-    "react/forbid-prop-types": 0,
-    "arrow-parens": [2, "always"],
-    "max-len": [0, 80],
-    "quotes": [
+    "react/jsx-curly-brace-presence": "off",
+    "react/jsx-filename-extension": "off",
+    "react/forbid-prop-types": "off",
+    "@typescript-eslint/no-unused-vars": [
       "error",
-      "single",
-      { "avoidEscape": true, "allowTemplateLiterals": true }
-    ]
+      { "ignoreRestSiblings": true, "argsIgnorePattern": "^_" }
+    ],
+    "@typescript-eslint/explicit-function-return-type": [
+      "off",
+      { "allowTypedFunctionExpressions": true }
+    ],
+    "@typescript-eslint/explicit-member-accessibility": [
+      "warn",
+      { "accessibility": "no-public" }
+    ],
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-var-requires": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "alias": {
+          "~*": ["src/*"]
+        },
+        "paths": ["./src"]
+      }
+    }
   }
 }

@@ -1,6 +1,6 @@
-# 📦🚀 ParcelJS React boilerplate
+# 📦🚀 Parcel TSX boilerplate
 
-A fairly minimal React + [ParcelJS](https://parceljs.org) boilerplate.
+A fairly minimal TypeScript, React + [ParcelJS](https://parceljs.org) boilerplate.
 
 ## Features
 
